@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block tittle %}
+OTP-verification
+{% endblock %}
+
+{% block body %}
+<form action="" method="post">
+    <div class="container">
+        <div class="card">
+            {% with messages=get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+             {% for category,msg in messages %}
+             <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+              <strong>{{msg}}</strong> 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+    
+             {% endfor %}
+            {% endif %}
+    
+            {% endwith %}
+            <h2>OTP-verification</h2>
+            <label for="">OTP-code</label>
+            <input type="password" placeholder="Enter OTP-code" name="user_otp">
+            <input type="submit" value="Verify" class="btn btn-success" style="color: azure;">
+        </div>
+    </div>
+</form>
+{% endblock %}

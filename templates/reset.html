@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block tittle %}
+forgot password
+{% endblock %}
+
+{% block body %}
+<form action="" method="post">
+    <div class="container">
+        <div class="card">
+            <h2>Reset your password</h2>
+            <label for="">New Password</label>
+            <input type="password" placeholder="Enter new password" name="password">
+            <label for="">Confirm Password</label>
+            <input type="password" placeholder="Confirm password" name="password">
+            <input type="submit" value="Enter" class="btn btn-success" style="color: azure;">
+        </div>
+    </div>
+</form>
+{% endblock %}

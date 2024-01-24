@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block tiitle %}
+Contact
+{% endblock %}
+
+{% block body %}
+<form action=""method="post" enctype="multipart/form-data">
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="{{url_for('static',filename='images/shop2.jpg')}}" alt="" style="border-radius: 50%;"></div>
+            <ul class="nav-links">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="shop-profile">
+        <h2>Contact Information</h2>
+    
+        <div class="contact-info">
+          <div>
+            <h3>Location</h3>
+            <p>kabarak street, Nakuru</p>
+          </div>
+    
+          <div>
+            <h3>Email</h3>
+            <p>tobiaskipkogei@gmail.com</p>
+          </div>
+    
+          <div>
+            <h3>Phone</h3>
+            <p>+254 796108292</p>
+            <h2>or</h2>
+            <p>+254 726053339</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <p>Follow us on social media:</p>
+        <div class="social-links">
+            <a href=""><img src="{{url_for('static',filename='images/whatsapp.jpeg')}}" alt=""></a>
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            <a href="#"><img src="{{url_for('static',filename='images/snapchat.png')}}" alt=""></a>
+        </div>
+        <div class="thanks">
+            <img src="{{url_for('static',filename='images/thanks.jpeg')}}" alt="">
+        </div>
+    </div>
+</form>
+{% endblock %}

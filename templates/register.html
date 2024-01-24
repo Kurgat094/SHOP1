@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block tittle %}
+Home
+{% endblock %}
+
+{% block body %}
+<form action="" method="post">
+    <div class="container">
+        <div class="card">
+            {% with messages=get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+             {% for category,msg in messages %}
+             <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+              <strong>{{msg}}</strong> 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+    
+             {% endfor %}
+            {% endif %}
+    
+            {% endwith %}
+            <h3>Register here</h3>
+            <img src="{{url_for('static',filename='images/profile.jpg')}}" alt="" style="border-radius: 50%;">
+            <label for="">Username</label>
+            <input type="text" placeholder="Enter Username" name="username">
+            <label for="">Email</label>
+            <input type="text" placeholder="Enter your email" name="email">
+            <label for="">Password</label>
+            <input type="text" placeholder="Enter password" name="password">
+            <label for="">Confirm Password</label>
+            <input type="text" placeholder="Confirm password" name="confirm">
+            <p>Already have an account?<a href="/login">Login here</a></p>
+            <input type="submit" value="Register" class="btn btn-success" style="color: azure;">
+        </div>
+    </div>
+</form>
+{% endblock %}

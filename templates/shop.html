@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block tittle %}
+{% endblock %}
+
+{% block body %}
+<form action="" method="post" enctype="multipart/form-data">
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="{{url_for('static',filename='images/shop2.jpg')}}" alt="" style="border-radius: 50%;"></div>
+            <ul class="nav-links">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="">Cart</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="shop">
+                <h3><i>This are the products available at the market </i></h3>
+            {% for row in new_data %}
+            <div class="datas">
+                <div class="data">
+                    <p><i>{{row[1]}}</i></p>
+                    <img  src="data:image/jpeg;base64,{{row[2] }}" width="150" height="150" alt="">
+                    <p>Price={{row[3]}}</p>
+                    <p class="btn btn-success"><a href="{{url_for('add_cart',id=row[0])}}">Add to cart</a></p>
+                </div>
+            </div>
+        {% endfor %}
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

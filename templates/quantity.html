@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block tittle %} 
+{% endblock %}
+
+
+{% block body %}
+<form action="">
+    <form action="" method="post" enctype="multipart/form-data">
+        <header>
+            <nav class="navbar">
+                <div class="logo"><img src="{{url_for('static',filename='images/shop2.jpg')}}" alt="" style="border-radius: 50%;"></div>
+                <ul class="nav-links">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/shop">Shop</a></li>
+                    <li><a href="/categories">Categories</a></li>
+                    <li><a href="">Cart</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+</form>
+<div class="quantity">
+    <div class="quanty">
+        <h2>Enter the now of goods you want</h2>
+        <label for="">Quantity</label>
+        <input type="int" placeholder="Enter quantity" required>
+        <input type="submit" value="Submit" class="btn btn-success">
+    </div>
+</div>
+{% endblock %}

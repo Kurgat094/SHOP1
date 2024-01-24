@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block tittle %}
+Home
+{% endblock %}
+
+{% block body %}
+<form action="" method="post" enctype="multipart/form-data">
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="{{url_for('static',filename='images/shop2.jpg')}}" alt="" style="border-radius: 50%;"></div>
+            <ul class="nav-links">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="content">
+                    <div class="welcome">
+                        <h4>Welcome to TOBBY'S ONLINE SHOP</h4>
+                        <h2>Discover a World of Quality and Style</h2>
+                        <p>At Toby's shop,we're more than just a store <br> we're a destination where your shopping journey. <br> Step into a world where quality meets style, and every purchase is an experience in itself.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{{url_for('static',filename='images/person.jpg')}}" alt="">
+            </div>
+        </div>
+        <div class="product">
+            <h3>Products</h3>
+            <div class="display">
+                <p>Here are some of the products on the market</p>
+                <div class="boxes">
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <a href=""></a>
+                    </div>
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <a href=""></a>
+                    </div>
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <a href=""></a>
+                    </div>
+                </div>
+                <p style="margin-top: 10px;">Grab your Order by viewing more of the products available<a href="/products"> click here</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Follow us on social media:</p>
+        <div class="social-links">
+            <a href="#"><img src="{{url_for('static',filename='images/whatsapp.jpeg')}}" alt=""></a>
+            <a href="#" target="_blank">Facebook</a>
+            <a href="#" target="_blank">Twitter</a>
+            <a href="#" target="_blank">Instagram</a>
+            <a href="#"><img src="{{url_for('static',filename='images/snapchat.png')}}" alt=""></a>
+            <!-- Add more social media links as needed -->
+        </div>
+        <div class="thanks">
+            <img src="{{url_for('static',filename='images/thanks.jpeg')}}" alt="">
+        </div>
+    </div>
+</form>
+{% endblock %}

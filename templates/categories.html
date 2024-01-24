@@ -1,0 +1,126 @@
+{% extends 'base.html' %}
+
+{% block tiitle %}
+Categories
+{% endblock %}
+
+{% block body %}
+<form action=""method="post" enctype="multipart/form-data">
+    <header>
+        <nav class="navbar">
+            <div class="logo"><img src="{{url_for('static',filename='images/shop2.jpg')}}" alt="" style="border-radius: 50%;"></div>
+            <ul class="nav-links">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/categories">Categories</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="clothings">
+                <h3>Clothings</h3>
+                <div class="boxes">
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="electronics">
+                <h3>Electronics</h3>
+                <div class="boxes">
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="kitchen">
+                <h3>Kitchen</h3>
+                <div class="boxes">
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="toys">
+                <h3>Toys</h3>
+                <div class="boxes">
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="books">
+                <h3>Books</h3>
+                <div class="boxes">
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                    <div class="box">
+                        <img src="{{url_for('static',filename='images/mat.jpg')}}" alt="">
+                        <p>Price=20$</p>
+                        <p class=" btn btn-success"><a href="/add_cart">Add to cart</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

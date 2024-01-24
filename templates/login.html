@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block tittle %}
+login
+{% endblock %}
+
+{% block body %}
+<form action="" method="post">
+    <div class="container">
+        <div class="card">
+            {% with messages=get_flashed_messages(with_categories=True) %}
+            {% if messages %}
+             {% for category,msg in messages %}
+             <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+              <strong>{{msg}}</strong> 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+    
+             {% endfor %}
+            {% endif %}
+    
+            {% endwith %}
+            <h3>Sign in here</h3>
+            <img src="{{url_for('static',filename='images/profile.jpg')}}" alt="" style="border-radius: 50%;">
+            <label for="">Username or Email</label>
+            <input type="text" placeholder="Enter Username or Email" name="username">
+            <div class="rem" style="display: inline-block;"><input type="checkbox">Remember me?</div>
+            <label for="">Password</label>
+            <input type="text" placeholder="Enter password" name="password">
+            <p><a href="/forgot">Forgot password?</a></p>
+            <input type="submit" value="Login" class="btn btn-success" style="color: azure;">
+            <p>Don't have an account?<a href="/register">Register here</a></p>
+        </div>
+    </div>
+</form>
+{% endblock %}
