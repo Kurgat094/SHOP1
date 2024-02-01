@@ -24,9 +24,9 @@
             <div class="datas">
                 <div class="data">
                     <p><i>{{row[1]}}</i></p>
-                    <img  src="data:image/jpeg;base64,{{row[2] }}" width="150" height="150" alt="">
-                    <p>Price={{row[3]}}</p>
-                    <p class="btn btn-success"><a href="{{url_for('add_cart',id=row[0])}}">Add to cart</a></p>
+                    <img  src="data:image/jpeg;base64,{{row[2]}}" width="150" height="150" alt="">
+                    <p>Price=${{row[3]}}</p>
+                    <p class="btn btn-success"><a href="{{url_for('cart',id=row[0])}}">Add to cart</a></p>
                 </div>
             </div>
         {% endfor %}

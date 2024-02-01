@@ -213,8 +213,9 @@ def admin():
         return redirect(url_for("shop"))
     return render_template("admin.html")
 
-@app.route("/add_cart/<id>")
-def add_cart(id):
+
+@app.route("/cart/<id>")
+def cart(id):
     cur=connection.cursor()
     cur.execute("SELECT * FROM uploads WHERE id=%s",(id))
     connection.commit()
@@ -226,51 +227,41 @@ def add_cart(id):
         all_image=list(row)
         all_image[2]=image
         new_data.append(all_image)
+        product=row[2]
+        description=row[1]
+        price=row[4]
+        quantity=2
+        total=quantity*price
+        
     cur.close()
-    return redirect(url_for('quantity',id=id))
-
-@app.route("/quantity/<id>",methods=["POST","GET"])
-def quantity(id):
-    if request.method=="POST":
-        quantity=request.form['quantity']
-        cur=connection.cursor()
-        cur.execute("SELECT * FROM uploads WHERE id=%s",(id))
-        connection.commit()
-        data=cur.fetchall()
-        new_data=[]
-        for row in data:
-            id=row[0]
-            description=row[1]
-            price=row[3]
-            product=row[2]
-            img=row[2]
-            image = base64.b64encode(img).decode('utf-8')
-            all_image=list(row)
-            all_image[2]=image
-            new_data.append(all_image)
-            total=quantity*row[3]
-        cur.close()
-        cur=connection.cursor()
-        cur.execute("INSERT INTO cart(id,product,description,price,quantity,total) VALUES(%s,%s,%s,%s,%s,%s)",(id,product,description,price,quantity,total))
-        connection.commit()
-        cur.close
-        return redirect(url_for('/cart/<id>',id=id))
-    return render_template("quantity.html")
-@app.route("/cart/<id>")
-def cart(id):
     cur=connection.cursor()
-    cur.execute("SELECT * FROM cart WHERE id=%s",(id))
+    cur.execute("INSERT INTO carts(id,product,description,price,quantity,total) VALUES (%s,%s,%s,%s,%s,%s)",(id,product,description,price,quantity,total))
+    connection.commit()
+    cur.close()
+    return redirect(url_for("add_cart",id=id))
+
+@app.route("/add_cart/<id>")
+def add_cart(id):
+    cur=connection.cursor()
+    cur.execute("SELECT * FROM carts WHERE id=%s",(id))
     connection.commit()
     data=cur.fetchall()
     new_data=[]
     for row in data:
-        img=row[2]
-        image = base64.b64encode(img).decode('utf-8')
+        image=row[1]
+        image = base64.b64encode(image).decode('utf-8')
         all_image=list(row)
-        all_image[2]=image
+        all_image[1]=image
         new_data.append(all_image)
     cur.close()
-    return render_template("cart.html")
+    return render_template("cart.html",new_data=new_data)
+@app.route("/remove/<id>")
+def remove(id):
+    cur=connection.cursor()
+    cur.execute("DELETE FROM carts WHERE id=%s",(id))
+    connection.commit()
+    cur.close()
+    return redirect(url_for("add_cart",id=id))
 if __name__=="__main__":
     app.run(debug=True)
     

@@ -36,12 +36,12 @@ Carts
         <tbody>
             {% for row in new_data %}
             <tr>
-                <td><img src="data:image/jpeg;base64,{{row[2] }}" alt="Product 1"></td>
-                <td>{{row[1]}}</td>
+                <td><img src="data:image/jpeg;base64,{{row[1] | safe}}" alt="product"></td>
+                <td>{{row[2]}}</td>
                 <td>{{row[3]}}</td>
                 <td>{{row[4]}}</td>
-                <td>{{row[5]}}</td>
-                <td><button><a href="/remove">Remove</a></button></td>
+                <td>${{row[5]}}</td>
+                <td><button><a href="{{url_for('remove',id=row[0])}}">Remove</a></button></td>
             </tr>
             {% endfor %}
         </tbody>
