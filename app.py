@@ -264,4 +264,3 @@ def remove(id):
     return redirect(url_for("add_cart",id=id))
 if __name__=="__main__":
     app.run(debug=True)
-    
